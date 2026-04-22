@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:japaguei/screens/Home_Screen.dart';
+import 'package:japaguei/screens/Main_Screen.dart';
 import 'models/Conta.dart';
 import 'models/Financiamento.dart';
+
 
 void main() async {
   // Garante que os bindings do Flutter estão inicializados
@@ -33,7 +35,7 @@ class JaPagueiApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(), // Tela principal que criaremos a seguir
+      home: const MainScreen(), // Tela principal que criaremos a seguir
     );
   }
 }

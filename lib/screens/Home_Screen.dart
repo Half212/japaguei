@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart'; // Para formatar a data e moeda
-import '../models/conta.dart';
+import '../models/Conta.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -212,7 +212,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               valor: entrada,
                               dataVencimento: dataSelecionada,
                               categoria: categoriaSelecionada,
-                              jaPaguei: true, // Assumimos que a entrada é paga à vista
+                              jaPaguei: true,
+                              tipo: '', // Assumimos que a entrada é paga à vista
                             ));
                           }
 
@@ -229,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               titulo: '$titulo ($i/$qtdParcelas)',
                               valor: valor,
                               dataVencimento: dataParcela,
-                              categoria: categoriaSelecionada,
+                              categoria: categoriaSelecionada, tipo: '',
                             ));
                           }
                         } else {
@@ -238,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             titulo: titulo,
                             valor: valor,
                             dataVencimento: dataSelecionada,
-                            categoria: categoriaSelecionada,
+                            categoria: categoriaSelecionada, tipo: '',
                           ));
                         }
 
@@ -256,3 +257,4 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
   }
+}

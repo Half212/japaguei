@@ -22,13 +22,14 @@ class ContaAdapter extends TypeAdapter<Conta> {
       dataVencimento: fields[2] as DateTime,
       jaPaguei: fields[3] as bool,
       categoria: fields[4] as String,
+      tipo: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, Conta obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.titulo)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class ContaAdapter extends TypeAdapter<Conta> {
       ..writeByte(3)
       ..write(obj.jaPaguei)
       ..writeByte(4)
-      ..write(obj.categoria);
+      ..write(obj.categoria)
+      ..writeByte(5)
+      ..write(obj.tipo);
   }
 
   @override
